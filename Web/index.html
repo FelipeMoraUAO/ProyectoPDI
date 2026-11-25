@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>DRUMMOTION — Toca con tu cuerpo</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#"><span class="brand-mark">D</span> DRUMMOTION</a>
+  <nav><a href="#como">Cómo funciona</a><a href="#kit">Batería</a><a href="#ayuda">Ayuda</a></nav>
+  <span class="live-pill"><i></i> GESTOS EN TIEMPO REAL</span>
+</header>
+<main>
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">TU CUERPO ES EL INSTRUMENTO</p>
+      <h1>Siente el ritmo.<br><em>Hazlo sonar.</em></h1>
+      <p class="lead">Convierte tus movimientos en golpes de batería. Ponte frente a la cámara, activa el sistema y empieza a tocar.</p>
+      <a class="primary" href="#play">EMPEZAR A TOCAR <span>↗</span></a>
+      <div class="mini-note"><span>●</span> El procesamiento se realiza en tu navegador.</div>
+    </div>
+    <div class="hero-art"><div class="orb orb1"></div><div class="orb orb2"></div><div class="sound-wave">〰</div><div class="hero-label">MOVE<br>TO THE<br>BEAT</div></div>
+  </section>
+
+  <section class="play-section" id="play">
+    <div class="section-heading"><div><p class="eyebrow">ESTUDIO INTERACTIVO</p><h2>Tu escenario</h2></div><span class="status" id="status">Cámara desactivada</span></div>
+    <div class="studio">
+      <div class="camera-panel">
+        <div class="panel-head"><span>SEGUIMIENTO CORPORAL</span><span class="tiny-dot"></span></div>
+        <div class="camera-wrap">
+          <video id="camera" autoplay playsinline muted></video>
+          <canvas id="overlay"></canvas>
+          <div class="camera-placeholder" id="placeholder"><div class="cam-icon">◎</div><b>Tu cámara aparecerá aquí</b><small>Ubícate a una distancia donde se vean tu cabeza, torso, brazos y manos.</small></div>
+          <div class="camera-hud"><span id="poseState">ESPERANDO CÁMARA</span><span id="fps">— FPS</span></div>
+        </div>
+        <div class="camera-actions">
+          <button class="primary" id="startCamera">ACTIVAR CÁMARA</button>
+          <button class="secondary" id="stopCamera" disabled>DETENER</button>
+        </div>
+        <p class="privacy">Tu video no se sube ni se guarda. La cámara se usa localmente para detectar tus movimientos.</p>
+      </div>
+      <div class="right-column">
+        <div class="panel kit-panel" id="kit">
+          <div class="panel-head"><span>DRUM KIT</span><span class="muted">VISTA PREVIA · TECLAS 1–4</span></div>
+          <div class="drum-kit">
+            <button class="drum crash" data-sound="crash"><small>1</small><b>CRASH</b></button>
+            <button class="drum ride" data-sound="ride"><small>2</small><b>RIDE</b></button>
+            <button class="drum tom" data-sound="tom"><small>3</small><b>TOM</b></button>
+            <button class="drum hit-tom" data-sound="hit_tom"><small>4</small><b>HIT TOM</b><small class="gesture-label">Mano izquierda al abdomen</small></button>
+          </div>
+          <p class="muted hint">Puedes probar los sonidos haciendo clic en cada instrumento o usando las teclas 1, 2, 3 y 4.</p>
+        </div>
+        <div class="panel activity-panel">
+          <div class="panel-head"><span>ACTIVIDAD RECIENTE</span><button class="text-button" id="clearLog">LIMPIAR</button></div>
+          <div id="eventList" class="event-list"><div class="empty">Todavía no hay golpes.<br><small>Activa la cámara y empieza a moverte.</small></div></div>
+          <div class="counter-row"><div><strong id="hitCount">0</strong><small>GOLPES</small></div><div><strong id="lastHit">—</strong><small>ÚLTIMO INSTRUMENTO</small></div></div>
+        </div>
+      </div>
+    </div>
+    <p class="footnote" id="modelNotice">Los pads y sonidos están activos. El reconocimiento automático actual es una versión provisional; conecta el modelo LSTM exportado para utilizar el clasificador entrenado.</p>
+  </section>
+
+  <section class="how" id="como"><p class="eyebrow">ASÍ DE FÁCIL</p><h2>Tu movimiento, convertido en música.</h2>
+    <div class="steps"><article><span>01</span><h3>Colócate frente a la cámara</h3><p>Deja espacio para mover los brazos y mantén el cuerpo visible.</p></article><article><span>02</span><h3>Haz los gestos</h3><p>Realiza los movimientos asociados a cada instrumento.</p></article><article><span>03</span><h3>Escucha el ritmo</h3><p>DRUMMOTION reconoce Crash, Ride, Tom y Hit Tom; Neutral permite preparar el siguiente golpe.</p></article></div>
+  </section>
+  <section class="help" id="ayuda"><div><p class="eyebrow">CONSEJOS</p><h2>Mejor experiencia</h2></div><ul><li>Usa Chrome o Edge actualizado.</li><li>Permite el acceso a la cámara.</li><li>Coloca la cámara fija, a la altura del torso.</li><li>Procura tener buena iluminación y un fondo despejado.</li><li>Concede permiso de audio haciendo clic en un instrumento la primera vez.</li></ul></section>
+</main>
+<footer><b>DRUMMOTION</b><span>Una nueva forma de sentir la batería.</span><span>Procesamiento local en el navegador.</span></footer>
+<script type="module" src="assets/js/app.js"></script>
+</body></html>
